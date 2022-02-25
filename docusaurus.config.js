@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Solana Validator Guidebook",
   tagline: "Run a Solana validator today",
-  url: "/tutorial",
+  url: "https://solana-validator-guidbook.vercel.app/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -60,8 +60,8 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/intro",
+                label: "What is a Validator?",
+                to: "/docs/solana-introduction/what-is-a-validator",
               },
             ],
           },
