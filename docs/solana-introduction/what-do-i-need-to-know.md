@@ -7,7 +7,7 @@ sidebar-postion: 4
 Operating a validator or a rpc nodes requires the following:
 
 1. Computer hardware and a fast internet connection
-    1. You can find a list of hardware requirements (here)[https://docs.solana.com/running-validator/validator-reqs]
+    1. You can find a list of hardware requirements [here](https://docs.solana.com/running-validator/validator-reqs)
 2. Knowledge of the linux terminal
 3. Ubuntu system administration
     1. Accessing your machine via ssh and scp
