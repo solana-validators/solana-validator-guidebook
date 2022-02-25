@@ -1,5 +1,5 @@
 ---
-sidebar-postion: 1
+sidebar_position: 1
 ---
 
 # What is a Validator?

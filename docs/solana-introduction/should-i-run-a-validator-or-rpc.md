@@ -1,5 +1,5 @@
 ---
-sidebar-postion: 3
+sidebar_position: 3
 ---
 
 # Should I Run a Validator or an RPC Node?

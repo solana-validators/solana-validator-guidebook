@@ -1,5 +1,5 @@
 ---
-sidebar-postion: 4
+sidebar_position: 4
 ---
 
 # What Do I Need to Know and Do?

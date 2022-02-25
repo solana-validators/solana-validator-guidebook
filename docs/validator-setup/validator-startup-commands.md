@@ -1,5 +1,5 @@
 ---
-sidebar-postion: 2
+sidebar_position: 1
 ---
 
 # Validator Startup Commands
