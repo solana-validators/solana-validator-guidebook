@@ -33,5 +33,7 @@ Anyone! The network is open for anyone to join.
 
 While anyone can join the network, you should make sure that your home computer and network meets the specifications in the [hardware requirements](https://docs.solana.com/running-validator/validator-reqs) doc.  Most home internet service providers do not provider consistent service that would allow your validator to perform well. In addition, you will want to make sure that your home computer is resistent to outages caused by loss of power, flooding, fire, etc.  Another alternative is the [solana server program](https://solana.foundation/server-program) which helps you get a no obligation server in a data center.
 
+__TODO__ Mention colocation as an option.
+
 
 
