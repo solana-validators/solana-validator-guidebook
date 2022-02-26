@@ -26,3 +26,4 @@ Solana, in contrast, does not incentivize validators to use many computers to so
 
 ## Solana Consensus
 
+__TODO__ More details on consensus.
