@@ -4,13 +4,12 @@ sidebar_position: 4
 
 # What Do I Need to Know and Do?
 
-Operating a validator or a rpc nodes requires the following:
+Operating a consensus validator or RPC nodes requires the following:
 
 * Computer hardware and a fast internet connection
     * You can find a list of hardware requirements [here](https://docs.solana.com/running-validator/validator-reqs)
     * Solana helps facilitate data center server rentals through the [solana server program](https://solana.foundation/server-program)
 * Knowledge of the linux terminal
-
 * Ubuntu system administration
     * Accessing your machine via ssh and scp
     * Installing software (potentially installing from source)
@@ -33,7 +32,7 @@ Anyone! The network is open for anyone to join.
 
 While anyone can join the network, you should make sure that your home computer and network meets the specifications in the [hardware requirements](https://docs.solana.com/running-validator/validator-reqs) doc.  Most home internet service providers do not provider consistent service that would allow your validator to perform well. In addition, you will want to make sure that your home computer is resistent to outages caused by loss of power, flooding, fire, etc.  Another alternative is the [solana server program](https://solana.foundation/server-program) which helps you get a no obligation server in a data center.
 
-__TODO__ Mention colocation as an option.
+## Do I Have To Use the Solana Server Program?
 
-
+No! You can acquire the computers that you need however you like. You can rent a server through a data center without going through the solana server program.  You could also build your own computer and then do a colocation. Colocation is a more technical option for people who are experienced with computer hardware and system administration but it may be a great option in many areas.
 
