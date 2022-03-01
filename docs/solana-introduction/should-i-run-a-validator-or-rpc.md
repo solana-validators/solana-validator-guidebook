@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Should I Run a Validator or an RPC Node?
 
-Operators who run a validator have much different incentives than operators who run an RPC node.
+Operators who run a validator have much different incentives than operators who run an RPC node.  You will have to decide where your interests and background fits best.
 
 ## Consensus Validators
 
@@ -12,6 +12,6 @@ As a validator your primary focus is maintaining the network and making sure tha
 
 ## RPC Nodes
 
-An rpc operator does not receive rewards because the node is not participating in voting. Instead, an rpc operator is providing a service to users who want to interact with the Solana blockchain.  Because your primary user is often technical, you will have to be able to answer technical questions about performance of RPC calls.  This option may require more understanding of the solana algoirthms.
+An rpc operator does not receive rewards because the node is not participating in voting. Instead, an rpc operator is providing a service to users who want to interact with the Solana blockchain.  Because your primary user is often technical, you will have to be able to answer technical questions about performance of RPC calls.  This option may require more understanding of the core Solana architecture.  You can read more about it in the [Solana docs](https://docs.solana.com/cluster/overview).
 
-Your job will also involve scaling your system to meet the demands of the users. For example, some RPC providers create dedicate nodes for projects that require a high volume of requests to the node. Someone with a background in development operations or software engineering will likely be a very important part of your team.
+Your job will also involve scaling your system to meet the demands of the users. For example, some RPC providers create dedicate nodes for projects that require a high volume of requests to the node. Someone with a background in development operations or software engineering will be a very important part of your team.
