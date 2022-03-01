@@ -8,7 +8,7 @@ Operators who run a validator have much different incentives than operators who 
 
 ## Consensus Validators
 
-As a validator you primary focus is maintaining the network and making sure that your node is performing optimally so that you can fully participate in the cluster consensus.  You will want to attract a delegation of sol to your validator which will prove that you are more trusted in the network and can therefor vote more often.
+As a validator your primary focus is maintaining the network and making sure that your node is performing optimally so that you can fully participate in the cluster consensus.  You will want to attract a delegation of sol to your validator which will prove that you are more trusted in the network and can therefor vote more often.
 
 A validator receives sol as rewards at the end of an epoch for participating in consensus.
 
