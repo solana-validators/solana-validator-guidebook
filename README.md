@@ -1,41 +1,19 @@
-# Website
+# Solana Validator Guidebook
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+The goal of the validator guidebook is to create documentation and resources to help potential validators and RPC operators get started.  It should also be a place for best practices and operational advice.
 
-### Installation
+## Contributing
+
+Contributions to the guidebook are welcome.  Refer to [CONTRIBUTING.md](CONTRIBUTING.md).
+
+### Building
+
+The guidebook is a node.js application written with [docusaurus v2](https://docusaurus.io/).  Some knowledge of node.js development is helpful.  To build the and run application:
 
 ```
-$ yarn
-```
-
-### Local Development
-
-```
+$ yarn install
 $ yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Once the application is running, you can view it at [localhost:3000](http://localhost:3000).
 
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
