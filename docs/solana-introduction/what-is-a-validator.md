@@ -5,21 +5,23 @@ sidebar_position: 1
 # What Is A Validator?
 
 A validator is a computer that helps to run the
-Solana network.  Without validators, Solana would not be able to function.
+Solana network.  All validators execute a program that keeps track of all accounts on the Solana cluster and validates transactions being added to the network.  Without validators, Solana would not be able to function.
 
-In order for the Solana network to be robust and secure, the network of validators must be decentralized. In other words, each validator should be run by an independent entity or person. Ideally, the validators should be in different geographic locations.  These measures help to avoid catastrophic issues (flooding, fire, natural disaster, etc) taking down the network. If a single validator goes offline for any reason, the cluster of validators will be able to function as long as a super majority of validators are online and working appropriately.
+In order for the Solana cluster to be robust and secure, the network of validators must be decentralized. In other words, each validator should be run by an independent entity or person. Ideally, the validators should be in different geographic locations.  These measures help to avoid catastrophic issues (flooding, fire, natural disaster, etc) taking down the network.  You can see a visualization of the state of the cluster at [solanabeach.io](https://solanabeach.io/).
+
+By becoming a validator, you are helping to grow the network and help make Solana more decentralized.
 
 ## Consensus vs RPC
 
-Before, we discuss validators in more detail, it's useful to make some distinctions. Using the validator software, you have the option of running a voting or consensus node or choosing to instead run an RPC node.  An RPC node helps Solana devs and others interact with the blockahin.  We go into more detail on RPC nodes in the next section, [what is an rpc node](/docs/solana-introduction/what-is-an-rpc-node).
+Before, we discuss validators in more detail, it's useful to make some distinctions. Using the same validator software, you have the option of running a voting/consensus node or choosing to instead run an RPC node.  An RPC node helps Solana devs and others interact with the blockchain but for performance reasons, an RPC node should not vote.  We go into more detail on RPC nodes in the next section, [what is an rpc node](/docs/solana-introduction/what-is-an-rpc-node).
 
 For this document, when a validator is mentioned, we are talking about a voting or consensus node. Now, to better understand what your validator is doing, it would help to understand how the Solana network functions in more depth.
 
 ## Proof Of Stake
 
-Proof of stake is the blockchain architecture that is used in Solana.  It is called proof of stake because token holders can stake their tokens to a validator of their choice. When a person stakes their tokens, that person still owns the tokens and can remove the stake at any time.  The staked tokens represent your trust in that validator.  When a person stakes their tokens to a validator, they are given a return of more tokens as a reward for helping to run and secure the network.  The more tokens you have staked to a validator the more rewards you receive.  A validator that has a large amount of tokens staked to it, is considered to be more trust worthy, and therefore has proportionally larger voting power in the network.
+Proof of stake is the blockchain architecture that is used in Solana.  It is called proof of stake because token holders can stake their tokens to a validator of their choice. When a person stakes their tokens, that person still owns the tokens and can remove the stake at any time.  The staked tokens represent your trust in that validator.  When a person stakes their tokens to a validator, they are given a return of some amount of tokens as a reward for helping to run and secure the network.  The more tokens you have staked to a validator the more rewards you receive.  A validator that has a large amount of tokens staked to it is considered to be more trust worthy by the algorithm.  A validator, therefore, is given more time to produce blocks in the network proportional to the size of the stake in the validator.  The validator that is currently producing blocks in the network is known as the leader.
 
-A proof of stake network relies on validators voting on new items that are being added to the blockchain.  Each validator gets a turn to vote. In solana, the amount of voting that a validator does is proportional to the stake that is delegated to that validator.
+A proof of stake network relies on validators voting on new items that are being added to the blockchain.
 
 ## Proof Of Work: For Comparison
 
