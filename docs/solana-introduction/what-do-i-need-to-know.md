@@ -22,7 +22,7 @@ Operating a consensus validator or RPC nodes requires the following:
 * Marketing and communications to attract users
 * Customer support
 
-Weather you decide to run a validator or an rpc node, you should consider all of these areas of expertise.  A team of people is likely necessary for you to achieve your goals.
+Whether you decide to run a validator or an rpc node, you should consider all of these areas of expertise.  A team of people is likely necessary for you to achieve your goals.
 
 ## Who can become a validator or RPC operator?
 
@@ -30,7 +30,7 @@ Anyone! The network is open for anyone to join.
 
 ## Can I use my computer at home?
 
-While anyone can join the network, you should make sure that your home computer and network meets the specifications in the [hardware requirements](https://docs.solana.com/running-validator/validator-reqs) doc.  Most home internet service providers do not provider consistent service that would allow your validator to perform well. In addition, you will want to make sure that your home computer is resistent to outages caused by loss of power, flooding, fire, etc.  Another alternative is the [solana server program](https://solana.foundation/server-program) which helps you get a no obligation server in a data center.
+While anyone can join the network, you should make sure that your home computer and network meets the specifications in the [hardware requirements](https://docs.solana.com/running-validator/validator-reqs) doc.  Most home internet service providers do not provider consistent service that would allow your validator to perform well. In addition, you will want to make sure that your home computer is resistant to outages caused by loss of power, flooding, fire, etc.  Another alternative is the [solana server program](https://solana.foundation/server-program) which helps you get a no obligation server in a data center.
 
 ## Do I Have To Use the Solana Server Program?
 
