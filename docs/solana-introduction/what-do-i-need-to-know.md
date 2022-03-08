@@ -28,6 +28,10 @@ Whether you decide to run a validator or an rpc node, you should consider all of
 
 Anyone! The network is open for anyone to join.
 
+## Solana Server Program
+
+The Solana server program is a no commitment option for validators and rpc operators.  You can lease servers in data centers all over the world that meet the Solana validator hardware specs.  To find out more, visit the [solana server program page](https://solana.foundation/server-program).
+
 ## Can I use my computer at home?
 
 While anyone can join the network, you should make sure that your home computer and network meets the specifications in the [hardware requirements](https://docs.solana.com/running-validator/validator-reqs) doc.  Most home internet service providers do not provider consistent service that would allow your validator to perform well. In addition, you will want to make sure that your home computer is resistant to outages caused by loss of power, flooding, fire, etc.  Another alternative is the [solana server program](https://solana.foundation/server-program) which helps you get a no obligation server in a data center.
@@ -35,4 +39,3 @@ While anyone can join the network, you should make sure that your home computer 
 ## Do I Have To Use the Solana Server Program?
 
 No! You can acquire the computers that you need however you like. You can rent a server through a data center without going through the solana server program.  You could also build your own computer and then do a colocation. Colocation is a more technical option for people who are experienced with computer hardware and system administration but it may be a great option in many areas.
-
