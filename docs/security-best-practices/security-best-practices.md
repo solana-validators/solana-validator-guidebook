@@ -23,3 +23,10 @@ It may be easier to get started by running your application as root, but it is a
 
 Your system should close all ports that do not need to be open to the outside world. A common firewall for closing ports is ufw (uncomplicated firewall).  You can find a guide to using ufw from [digital ocean](https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands).
 
+## Eliminate Brute Force Attacks With fail2ban
+
+[fail2ban](https://github.com/fail2ban/fail2ban) is a network security tool that checks your logs for suspicious login attempts and bans those IP addresses after repeated attempts.  This will help mitigate brute force attacks on your serve. A default setup should work by doing the following:
+
+```
+sudo apt install fail2ban
+```
