@@ -6,15 +6,47 @@ sidebar_position: 0
 
 This is a prescriptive guide for getting your validator setup on the Solana testnet cluster.  It is opinionated by design, so feel free to adapt this guide to better fit your needs.
 
+## Open The Terminal Program
+
+Locate the terminal program on your local computer.  On mac, you can search for the word _terminal_ in spotlight. On Ubuntu, you can type CTRL + Alt + T. On windows, you will have to open the command prompt as an Administrator.
+
 ## Install The Solana CLI Locally
 
-Install the solana cli on your local (secure) computer if it is not already installed: [install solana cli](https://docs.solana.com/cli/install-solana-cli-tools). Our goal here is to create the keys for our validator on a separate computer from the validator itself.
+To create your validator vote account, we need to install the solana command line interface on your computer.  Follow [Use Solana's Install Tool](https://docs.solana.com/cli/install-solana-cli-tools#use-solanas-install-tool) section from the solana docs to install the cli.  You can return to this document once you are able to run the following command and get an answer on your terminal:
 
-Next, change your config to make requests to the testnet cluster
+```
+solana --version
+```
+
+Our goal here is to create the keys for our validator on a separate computer from the validator itself.
+
+### Using the terminal in mac was confusing
+
+### Switching back and forth is confusing
+
+### Path for creating vote account was wrong (don't use tilde)
+
+### solana default install has keypair in wrong place
+
+### no sol when first creating an account
+
+### Creating an ssh key
+
+## Solana CLI Setup
+
+Next, change your config so that it is making requests to the testnet cluster
 
 ```
 solana config set --url https://api.testnet.solana.com
 ```
+
+To verify that your config has change run:
+
+```
+solana config get
+```
+
+You should see a line that says, `__RPC URL__: https://api.testnet.solana.com`
 
 ## Create Keys
 
@@ -22,32 +54,61 @@ On your local computer, Create the 3 keypairs that you will need to run your val
 
 ```
 solana-keygen new -o validator-keypair.json
+```
+
+```
 solana-keygen new -o vote-account-keypair.json
+```
+
+```
 solana-keygen new -o authorized-withdrawer-keypair.json
 ```
 
 __IMPORTANT__ the authroized-withdrawer-keypair.json should be stored in a secure place like a hardware wallet or a password protection app. It should not be stored on the validator. See the [FAQ](/docs/FAQ/) for more details.
 
-
 ## Create A Vote Account
 
-Use the solana network to create a vote account.  This should be done on your local machine (not on your validator):
+Before we can create our vote account, we need to configure the solana command line tool a bit more.  Change the setting for the default keypair:
 
 ```
-solana create-vote-account ~/vote-account-keypair.json ~/validator-keypair.json ~/authorized-withdrawer-keypair.json
+solana config set `pwd`/validator-keypair.json
+```
+
+Now verify your account balance of 0:
+
+```
+solana balance
+```
+
+Next, we need to deposit some sol into that keypair account in order create a transaction (in this case, making our vote account):
+
+```
+solana airdrop 1
+```
+
+The above command does not work on mainnet so you will have to figure out how to transfer sol into this keypair account if you are setting up a mainnet validator.
+
+Now, use the solana network to create a vote account.  This should be done on your local machine (not on your validator):
+
+```
+solana create-vote-account ./vote-account-keypair.json ./validator-keypair.json ./authorized-withdrawer-keypair.json
 ```
 
 ## Save the Withdrawer Keypair Securely
 
-Make sure your `authorized-withdrawer-keypair` is stored in a safe place, then delete it from your local machine. __Important__: if you lose your withdrawer key pair, you will not be able to withdraw tokens from the vote account and you will lose access to it.
+Make sure your `authorized-withdrawer-keypair` is stored in a safe place, then delete it from your local machine.
+
+__Important__: if you lose your withdrawer key pair, you will not be able to withdraw tokens from the vote account and you will lose access to it.
 
 ## SSH To Your Validator
 
 Connect to your remote server. This is specific to your server but will look something like this:
 
 ```
-ssh root@my.server.hostname
+ssh root@<server.hostname>
 ```
+
+You will have to check with your server provider to get the correct user account and hostname that you will ssh into.
 
 ## Update Your Ubuntu Packages
 
@@ -77,8 +138,15 @@ On your Ubuntu computer make sure that you have at least 2TB of disk space mount
 df -h
 ```
 
-If you have a drive but it is not mounted/formatted, you’ll have to follow the steps [here](https://phoenixnap.com/kb/linux-format-disk):
+If you have a drive but it is not mounted/formatted, you will have to setup the partition and mount the drive.
 
+To see the hard disk devices that you have available, use the list block devices command:
+
+```
+lsblk -f
+```
+
+You may see some devices in the list that have a name but do not have a UUID.  In my case, I have nvme1n1 and nvme2n1.  Any device without a UUID is unformatted.  To format and mount your drive, follow the steps [here](https://phoenixnap.com/kb/linux-format-disk).
 
 ## System Tuning
 
@@ -101,8 +169,8 @@ su - sol
 On your local computer (not on the validator).  Securely copy your validator-keypair.json file and your vote-account-keypair.json file.
 
 ```
-scp validator-keypair.json sol@my.server.hostname:
-scp vote-account-keypair.json sol@my.server.hostname:
+scp validator-keypair.json sol@<server.hostname>:
+scp vote-account-keypair.json sol@<server.hostname>:
 ```
 
 ## Create A Validator Startup Script
@@ -114,13 +182,13 @@ mkdir -p /home/sol/bin
 touch /home/sol/bin/validator.sh
 chmod +x /home/sol/bin/validator.sh
 ```
-
-Next, Paste [this command](https://docs.solana.com/clusters#testnet) in a validator.sh file
+Next, open the `validator.sh` file for editing
 
 ```
 nano /home/sol/bin/validator.sh
 ```
-Copy and paste the following into your validator.sh file:
+
+Copy and paste the following into `validator.sh`:
 
 ```
 solana-validator \
@@ -153,7 +221,7 @@ Test that your validator.sh file is running properly.
 /home/sol/bin/validator.sh
 ```
 
-In a separate ssh connection, identify your validator pupkey:
+In a terminal window, connect to your server via ssh. Identify your validator pupkey:
 
 ```
 solana keygen pubkey ~/validator-keypair.json
