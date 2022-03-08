@@ -18,22 +18,6 @@ To create your validator vote account, we need to install the solana command lin
 solana --version
 ```
 
-Our goal here is to create the keys for our validator on a separate computer from the validator itself.
-
-### Using the terminal in mac was confusing
-
-### Switching back and forth is confusing
-
-### Path for creating vote account was wrong (don't use tilde)
-
-### solana default install has keypair in wrong place
-
-### no sol when first creating an account
-
-### Creating an ssh key
-
-## Solana CLI Setup
-
 Next, change your config so that it is making requests to the testnet cluster
 
 ```
