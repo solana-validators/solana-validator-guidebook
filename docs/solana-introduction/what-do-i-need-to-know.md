@@ -38,4 +38,4 @@ While anyone can join the network, you should make sure that your home computer 
 
 ## Do I Have To Use the Solana Server Program?
 
-No! You can acquire the computers that you need however you like. You can rent a server through a data center without going through the solana server program.  You could also build your own computer and then do a colocation. Colocation is a more technical option for people who are experienced with computer hardware and system administration but it may be a great option in many areas.
+No! You can acquire the computers that you need any way that you like. You can rent a server through a data center without going through the solana server program.  You could also build your own computer and then do a colocation. Colocation is a more technical option for people who are experienced with computer hardware and system administration but it may be a great option in many areas.

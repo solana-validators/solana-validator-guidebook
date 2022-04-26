@@ -130,11 +130,83 @@ To see the hard disk devices that you have available, use the list block devices
 lsblk -f
 ```
 
-You may see some devices in the list that have a name but do not have a UUID.  In my case, I have nvme1n1 and nvme2n1.  Any device without a UUID is unformatted.  To format and mount your drive, follow the steps [here](https://phoenixnap.com/kb/linux-format-disk).
+You may see some devices in the list that have a name but do not have a UUID. Any device without a UUID is unformatted.
+
+### Optional: Drive Formatting
+
+Assuming you have an nvme drive, that is not formatted, you will have to format the drive and then mount it. For example, if your computer has a device located at `/dev/nvme0n1`, then you can format the drive with the command:
+
+```
+sudo mkfs -t ext4 /dev/nvme0n1
+```
+
+For your computer, the device name and location may be different.
+
+Next, check that you now have a UUID for that device:
+
+```
+lsblk -f
+```
+
+In the forth column, next to your device name, you should see a string of letters and numbers that look like this: `6abd1aa5-8422-4b18-8058-11f821fd3967`. That is the UUID for the device.
+
+### Optional: Mounting Your Drive
+
+So far, we have created a formatted drive, but you do not have access to it until you mount it. Make a directory for mounting your drive:
+
+```
+sudo mkdir -p /mnt/ledger
+```
+
+Next, change the ownership of the directory to your sol user:
+
+```
+sudo chown -R sol:sol /mnt/ledger
+```
+
+Now you can mount the drive:
+
+```
+sudo mount /dev/nvme01 /mnt/ledger
+```
+
+### Optional: Mounting AccountsDB
+
+You will also want to mount the accounts db on a separate hard drive.  The process will be similar to the ledger example above.
+
+Assuming you have device at `/dev/nvme1n1`, Format the device and verify it exists:
+
+```
+sudo mkfs -t ext4 /dev/nvme0n1
+```
+
+Then verify the UUID for the device exists:
+
+```
+lsblk -f
+```
+
+Create directory for mounting:
+
+```
+sudo mkdir -p /mnt/accounts
+```
+
+Change the ownership of that directory:
+
+```
+sudo chown -R sol:sol /mnt/accounts
+```
+
+And lastly, mount the drive:
+
+```
+sudo mount /dev/nvme01n1 /mnt/accounts
+```
 
 ## System Tuning
 
-In order for your validator to run properly, you will need to tune the system. (If you skip this step, you will likely get an out of memory error). The solana docs have a discussion of the options [here](https://docs.solana.com/running-validator/validator-start#system-tuning), but the `solana-sys-tuner` will work well for us. Run the following:
+In order for your validator to run properly, you will need to tune the system. (If you skip this step, you will likely get an out of memory error). The solana docs have an advanced discussion of manual tuning options [here](https://docs.solana.com/running-validator/validator-start#system-tuning).  To get started, the automated `solana-sys-tuner` will work well for us. Run the following:
 
 ```
 sudo $(command -v solana-sys-tuner) --user sol) > sys-tuner.log 2>&1
@@ -205,31 +277,67 @@ Test that your validator.sh file is running properly.
 /home/sol/bin/validator.sh
 ```
 
-In a terminal window, connect to your server via ssh. Identify your validator pupkey:
+### Tailing The Logs
+
+As a spot check, you will want to make sure your validator is producing reasonable log output (warning, there will be a lot of log output).  In a new terminal window, ssh to your validator machine, switch users to the `sol` user and tail the logs:
+
+```
+su - sol
+tail -f solana-validator.log
+```
+
+The tail command will continue to display the output of a file as the file changes.  You should see a continuous stream of log output as your validator runs. Keep an eye out for any lines that say _ERROR_.  Assuming you do not see any error messages, exit out of the command.
+
+### Gossip Protocol
+
+Gossip is a protocol used in the solana network to pass non critical messages between validators. To verify that your validator is running properly, you will want to make sure that it has registered itself with the gossip network.
+
+In a new terminal window, connect to your server via ssh. Identify your validator pupkey:
 
 ```
 solana keygen pubkey ~/validator-keypair.json
 ```
 
-Verify that your validator has made a connection to the gossip protocol. This step verifies that other computers in the network know about your validator.
+The command `solana gossip` lists all validators that have registered with the protocol. To check that the newly setup validator is in gossip, we will grep for our pubkey in the output:
 
 ```
 solana gossip | grep <pubkey>
 ```
 
-Next, Make sure your validator is catching up. See the [FAQ](/docs/FAQ/) for an explanation of catching up:
+After running the command, you should see a single line that looks like this:
+
+```
+172.16.254.1  | 3ZtxSmWJnDVxws31MAkLXnNzNPB8eTYzsyJWMJULVYuz | 8000   | 8003  | none                  | 1.10.9  | 1122441720
+```
+
+If you do not see any output after greping the output of gossip, your validator may be having startup problems. If that is the case, start debugging by looking through the validator log output.
+
+### Solana Validators
+
+After you have verified that your validator is in gossip, you can verify that your validator has joined the network using the `solana validators` command.  The command lists all validators in the network, but like before, we can grep the output for the validator we care about:
+
+```
+solana validators | grep <pubkey>
+```
+
+You should see a line of output that looks like this:
+
+```
+  3ZtxSmWJnDVxws31MAkLXnNzNPB8eTYzsyJWMJULVYuz  FBGaLZsV9xMamgc9aFg6aAer5BxiGiunamCVXer26xAQ   10%  130100678 ( -7)  130100632 (-10)   7.62%   293731   1.10.9   12479.55 SOL (1.11%)
+```
+
+
+### Solana Catchup
+
+The solana catchup command is a useful tool for seeing how quickly your validator is processing blocks.  The solana network has the capability to produce many transactions per second.  Since your validator is new to the network, it has to ask another validator (listed as a --known-validator in your startup script) for a recent snapshot of the ledger.  By the time you receive the snapshot, you may already be behind the network.  Many transactions may have been processed and finalized in that time. In order for your validator to participate in consensus, it must _catchup_ to the rest of the network by asking for the more recent transactions that it does not have.
+
+The `solana catchup` command is a tool that tells you how far behind the network your validator is and how quickly you are catching up. For more explanation, see the [FAQ](/docs/FAQ).
 
 ```
 solana catchup <pubkey>
 ```
 
-If you see a message about trying to connect, your validator is not part of the network yet.
-
-See if your validator is part of the network:
-
-```
-solana validators | grep <pubkey>
-```
+If you see a message about trying to connect, your validator may not be part of the network yet.  Make sure to check the logs and double check `solana gossip` and `solana validators` to make sure your validator is running properly.
 
 Once you are happy that the validator can start up without errors, the next step is to create a system service to run the validator.sh file automatically.  Stop the currently running validator by doing CTRL+C.
 
