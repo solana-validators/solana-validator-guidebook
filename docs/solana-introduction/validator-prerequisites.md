@@ -24,13 +24,19 @@ Operating a validator is an interesting and rewarding task. It requires someone 
 
 Whether you decide to run a validator or an rpc node, you should consider all of these areas of expertise.  A team of people is likely necessary for you to achieve your goals.
 
-## Who can become a validator or RPC operator?
+Below are some common getting started topics:
 
-Anyone! The network is permissionless and censorship resistent.  It is open for anyone to join at any time.
+## Solana is Permissionless
 
-## Solana Server Program
+Anyone can join the solana cluster (devnet, testnet or mainnet) at any time! The network is permissionless and censorship resistent.  It is open to anyone by design
 
-The Solana server program is a no commitment option for validators and rpc operators.  You can lease servers in data centers all over the world that meet the Solana validator hardware specs.  Additionally, through the server program, there are no long term commitments.  To find out more, visit the [solana server program page](https://solana.foundation/server-program).
+## Solana Foundation Delegation Program
+
+The Solana Foundation helps facilitate the growth of the consensus validator network by running a sol delegation program.  The program is open to anyone to join, but it currently is not offer to US residents. You can find out more information [here](https://solana.foundation/delegation-program)
+
+## Solana Foundation Server Program
+
+The Solana Foundation, separately from the delegation program, offers a server program.  The server program offers servers in various data centers all over the world that meet the Solana validator hardware specs.  The server program does not require any long term lease commitments and is open to US residents as well. To find out more, visit the [solana server program page](https://solana.foundation/server-program).
 
 ## Can I use my computer at home?
 
