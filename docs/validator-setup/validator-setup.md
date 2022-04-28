@@ -48,7 +48,7 @@ solana-keygen new -o vote-account-keypair.json
 solana-keygen new -o authorized-withdrawer-keypair.json
 ```
 
-__IMPORTANT__ the authroized-withdrawer-keypair.json should be stored in a secure place like a hardware wallet or a password protection app. It should not be stored on the validator. See the [FAQ](/docs/FAQ/) for more details.
+__IMPORTANT__ the authroized-withdrawer-keypair.json should be stored in a secure place like a hardware wallet or a password protection app. It should not be stored on the validator. See the [FAQ](/FAQ/) for more details.
 
 ## Create A Vote Account
 
@@ -331,7 +331,7 @@ You should see a line of output that looks like this:
 
 The solana catchup command is a useful tool for seeing how quickly your validator is processing blocks.  The solana network has the capability to produce many transactions per second.  Since your validator is new to the network, it has to ask another validator (listed as a --known-validator in your startup script) for a recent snapshot of the ledger.  By the time you receive the snapshot, you may already be behind the network.  Many transactions may have been processed and finalized in that time. In order for your validator to participate in consensus, it must _catchup_ to the rest of the network by asking for the more recent transactions that it does not have.
 
-The `solana catchup` command is a tool that tells you how far behind the network your validator is and how quickly you are catching up. For more explanation, see the [FAQ](/docs/FAQ).
+The `solana catchup` command is a tool that tells you how far behind the network your validator is and how quickly you are catching up. For more explanation, see the [FAQ](/FAQ).
 
 ```
 solana catchup <pubkey>

@@ -10,7 +10,7 @@ Anyone can join the cluster including home users, however, you must make sure th
 
 ### Is a validator the same as mining?
 
-No, a validator uses proof of stake instead of proof of work.  See [what is a validator?](docs/solana-introduction/what-is-a-validator).
+No, a validator uses proof of stake instead of proof of work.  See [what is a validator?](/solana-introduction/what-is-a-validator).
 
 ### What are the 3 keys (identity, voting, withdrawer) used for in my validator?
 

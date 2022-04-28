@@ -61,8 +61,8 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "What is a Validator?",
-                to: "/docs/solana-introduction/what-is-a-validator",
+                label: "Solana Validator Guidebook",
+                to: "/",
               },
             ],
           },
@@ -70,16 +70,12 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
                 label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                href: "https://discord.com/invite/solana",
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                href: "https://twitter.com/solanafndn",
               },
             ],
           },
