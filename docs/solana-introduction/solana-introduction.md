@@ -9,4 +9,4 @@ The _Solana Validator Guidebook_ is a reference and getting started guide for op
 
 ## Contributing
 
-If you are interested in contributing to the guidebook, please see the github issues [here](https://docs.solana.com/) and the contribution guide [here](https://docs.solana.com/).  Contributions are greatly appreciated and it's a great way to help grow the Solana ecosystem.
+If you are interested in contributing to the guidebook, please see the github issues [here](https://github.com/tigarcia/solana-validator-guidebook/issues) and the contribution guide [here](https://github.com/tigarcia/solana-validator-guidebook/blob/main/CONTRIBUTING.md).  Contributions are greatly appreciated and it's a great way to help grow the Solana ecosystem.
