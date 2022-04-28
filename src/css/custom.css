@@ -37,3 +37,15 @@ html[data-theme='dark'] {
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+div.col article {
+  padding-left: 65px;
+  padding-right: 65px;
+}
+
+@media only screen and (max-width: 800px) {
+  div.col article {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

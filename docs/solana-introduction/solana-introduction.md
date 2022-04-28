@@ -1,9 +1,9 @@
 ---
-id: solana-introduction
+id: solana-validator-guidebook-introduction
 slug: /
 ---
 
-# Solana Validator Guidebook Introduction
+# Solana Validator Guidebook
 
 The _Solana Validator Guidebook_ is a reference and getting started guide for operators of consensus validators and RPCs.  The guide is only meant as a suggestion of common best practices, so be sure to read the [official solana docs](https://docs.solana.com/) for more detail.
 

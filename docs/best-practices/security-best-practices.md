@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Security Best Practices
 
 Being a system administrator for a ubuntu computer requires technical knowledge of the system and best security practices.  The following list should help you get started and is considered the bare minimum for keeping your system safe.

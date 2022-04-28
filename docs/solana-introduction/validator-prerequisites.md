@@ -2,9 +2,9 @@
 sidebar_position: 4
 ---
 
-# What Do I Need to Know and Do?
+# Solana Validator Prerequisites
 
-Operating a consensus validator or RPC nodes requires the following:
+Operating a validator is an interesting and rewarding task. It requires someone with a technical background but also involves community engagement and marketing.  Here is a list of some of the requirements for being a good operator:
 
 * Computer hardware and a fast internet connection
     * You can find a list of hardware requirements [here](https://docs.solana.com/running-validator/validator-reqs)
@@ -26,15 +26,17 @@ Whether you decide to run a validator or an rpc node, you should consider all of
 
 ## Who can become a validator or RPC operator?
 
-Anyone! The network is open for anyone to join.
+Anyone! The network is permissionless and censorship resistent.  It is open for anyone to join at any time.
 
 ## Solana Server Program
 
-The Solana server program is a no commitment option for validators and rpc operators.  You can lease servers in data centers all over the world that meet the Solana validator hardware specs.  To find out more, visit the [solana server program page](https://solana.foundation/server-program).
+The Solana server program is a no commitment option for validators and rpc operators.  You can lease servers in data centers all over the world that meet the Solana validator hardware specs.  Additionally, through the server program, there are no long term commitments.  To find out more, visit the [solana server program page](https://solana.foundation/server-program).
 
 ## Can I use my computer at home?
 
-While anyone can join the network, you should make sure that your home computer and network meets the specifications in the [hardware requirements](https://docs.solana.com/running-validator/validator-reqs) doc.  Most home internet service providers do not provider consistent service that would allow your validator to perform well. In addition, you will want to make sure that your home computer is resistant to outages caused by loss of power, flooding, fire, etc.  Another alternative is the [solana server program](https://solana.foundation/server-program) which helps you get a no obligation server in a data center.
+While anyone can join the network, you should make sure that your home computer and network meets the specifications in the [hardware requirements](https://docs.solana.com/running-validator/validator-reqs) doc.  Most home internet service providers do not provider consistent service that would allow your validator to perform well.
+
+In addition, you will want to make sure that your home computer is resistant to outages caused by loss of power, flooding, fire, theft, etc.  To get started and learn about being an operator, a home setup may be sufficient, but you will want to consider all of these factors when you start operating your validator on mainnet.
 
 ## Do I Have To Use the Solana Server Program?
 

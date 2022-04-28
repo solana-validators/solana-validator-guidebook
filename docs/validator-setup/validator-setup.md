@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 1
 ---
 
 # Validator Setup
@@ -30,7 +30,7 @@ To verify that your config has change run:
 solana config get
 ```
 
-You should see a line that says, `__RPC URL__: https://api.testnet.solana.com`
+You should see a line that says, `RPC URL: https://api.testnet.solana.com`
 
 ## Create Keys
 
@@ -82,7 +82,7 @@ solana create-vote-account ./vote-account-keypair.json ./validator-keypair.json 
 
 Make sure your `authorized-withdrawer-keypair` is stored in a safe place, then delete it from your local machine.
 
-__Important__: if you lose your withdrawer key pair, you will not be able to withdraw tokens from the vote account and you will lose access to it.
+__IMPORTANT__: If you lose your withdrawer key pair, you will not be able to withdraw tokens from the vote account and you will lose access to it.  Make sure to store the `authorized-withdrawer-keypair` securely before you move on.
 
 ## SSH To Your Validator
 
@@ -267,7 +267,7 @@ solana-validator \
     --limit-ledger-size
 ```
 
-Paste the contents of the command, and save the file.
+Paste the contents of the command, and save the file.  Refer to `solana-validator --help` for more information on what each flag is doing in this script.  For a discussion of best practices, see the
 
 ## Verifying Your Validator Is Working
 
