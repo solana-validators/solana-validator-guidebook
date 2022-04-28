@@ -86,6 +86,10 @@ const config = {
                 label: "GitHub",
                 href: "https://github.com/tigarcia/solana-validator-guidbook",
               },
+              {
+                label: "Solana Docs",
+                href: "https://docs.solana.com/",
+              },
             ],
           },
         ],
