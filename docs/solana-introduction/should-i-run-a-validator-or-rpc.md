@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Should I Run a Validator or an RPC Node?
+# Consensus Validator or RPC Node?
 
 Operators who run a validator have much different incentives than operators who run an RPC node.  You will have to decide where your interests and background fits best.
 
