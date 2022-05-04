@@ -30,7 +30,7 @@ There are many ways to upgrade the solana software and as an operator, you will 
 solana-install init 1.10.11
 ```
 
-This command download the executable for `1.10.11` and installs it into a `.local` directory.  You can also look at `solana-install --help` for more options.
+This command downloads the executable for `1.10.11` and installs it into a `.local` directory.  You can also look at `solana-install --help` for more options.
 
 ## Using Local Snapshots
 
@@ -40,11 +40,11 @@ Startup time for your validator is important, because you want to minimize downt
 --no-snapshot-fetch
 ```
 
-If you use this command, make sure that you run `solana catchup <pubkey>` after your validator starts to make sure that the validator is catching up in a reasonable time.  If the snapshot that you are using locally is too old, it may be faster to use a snapshot from another validator instead.  You will have to experiment with this flag to figure out what works best for you.
+If you use this flag with the `solana-validator` command, make sure that you run `solana catchup <pubkey>` after your validator starts to make sure that the validator is catching up in a reasonable time.  If the snapshot that you are using locally is too old, it may be faster to use a snapshot from another validator.  Be aware that using a snapshot instead of catching up will likely result in missing blocks in your local copy of the ledger.  Because of these trade offs, you will have to experiment with this flag to figure out what works best for you.
 
 ## Regularly Check Account Balances
 
-As an operator, you have you do not want to accidentally run out of funds in your identity account, but you also do not want to put a large amount of sol in that identity account since the key must be stored on the server in order to run the `solana-validator` program. As a security precaution, you should only keep a small amount of sol in the identity key and refill it regularly.  How much sol you should store there is up to your and your comfort level.  Assuming you check the account weekly, but want some buffer, maybe 30 sol is enough.  As a reminder, to check the account balance do:
+It is important that you do not accidentally run out of funds in your identity account, as your node will stop voting.  However, this account is somewhat vulnerable because the keypair for the account must be stored on your validator to run the `solana-validator` software. How much SOL you should store there is up to you.  As a best practice, make sure to check the account regularly and refill it as needed.  To check the account balance do:
 
 ```
 solana balance validator-keypair.json

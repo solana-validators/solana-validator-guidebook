@@ -13,7 +13,7 @@ Now let's get started.
 
 ## Open The Terminal Program
 
-Locate the terminal program on your local computer.  On mac, you can search for the word _terminal_ in spotlight. On Ubuntu, you can type CTRL + Alt + T. On windows, you will have to open the command prompt as an Administrator.
+To start this guide, you will be running commands on your trusted personal computer. First, locate the terminal program on your _personal computer_.  On mac, you can search for the word _terminal_ in spotlight. On Ubuntu, you can type CTRL + Alt + T. On windows, you will have to open the command prompt as an Administrator.
 
 ## Install The Solana CLI Locally
 
@@ -59,7 +59,7 @@ solana-keygen new -o vote-account-keypair.json
 solana-keygen new -o authorized-withdrawer-keypair.json
 ```
 
-__IMPORTANT__ the authroized-withdrawer-keypair.json should be stored in a secure place like a hardware wallet or a password protection app. It should not be stored on the validator. See the [FAQ](/FAQ/) for more details.
+__IMPORTANT__ the authorized-withdrawer-keypair.json should be stored in a secure place like a hardware wallet or a password protection app. It should not be stored on the validator. See the [FAQ](/FAQ/) for more details.
 
 ## Create A Vote Account
 
@@ -69,7 +69,7 @@ Before you can create your vote account, you need to configure the solana comman
 The below command sets the default kepair that the solana cli uses to the `validator-keypair.json` file that you just created in the terminal:
 
 ```
-solana config set `pwd`/validator-keypair.json
+solana config set --keypair ./validator-keypair.json
 ```
 
 Now verify your account balance of 0:
@@ -78,15 +78,15 @@ Now verify your account balance of 0:
 solana balance
 ```
 
-Next, you need to deposit some sol into that keypair account in order create a transaction (in this case, making your vote account):
+Next, you need to deposit some SOL into that keypair account in order create a transaction (in this case, making your vote account):
 
 ```
 solana airdrop 1
 ```
 
-The above command does not work on mainnet so you will have to figure out how to transfer sol into this keypair account if you are setting up a mainnet validator.
+The above command does not work on mainnet so you will have to acquire some SOL and transfer it into this keypair's account if you are setting up a mainnet validator.
 
-Now, use the solana network to create a vote account.  This should be done on your local machine (not on your validator):
+Now, use the solana network to create a vote account.  As a reminder, all commands mentioned so far should be done on your personal computer and not on a server where you intend to run your validator.  It is especially important that the following command is done on your _personal computer_:
 
 ```
 solana create-vote-account ./vote-account-keypair.json ./validator-keypair.json ./authorized-withdrawer-keypair.json
@@ -96,7 +96,7 @@ solana create-vote-account ./vote-account-keypair.json ./validator-keypair.json 
 
 Make sure your `authorized-withdrawer-keypair` is stored in a safe place, then delete it from your local machine.
 
-__IMPORTANT__: If you lose your withdrawer key pair, you will not be able to withdraw tokens from the vote account and you will lose access to it.  Make sure to store the `authorized-withdrawer-keypair` securely before you move on.
+__IMPORTANT__: If you lose your withdrawer key pair, you will not be able to withdraw tokens from the vote account.  Make sure to store the `authorized-withdrawer-keypair.json` securely before you move on.
 
 ## SSH To Your Validator
 
@@ -136,7 +136,7 @@ On your Ubuntu computer make sure that you have at least 2TB of disk space mount
 df -h
 ```
 
-If you have a drive but it is not mounted/formatted, you will have to setup the partition and mount the drive.
+If you have a drive but it is not mounted/formatted, you will have to set up the partition and mount the drive.
 
 To see the hard disk devices that you have available, use the list block devices command:
 
@@ -162,7 +162,7 @@ Next, check that you now have a UUID for that device:
 lsblk -f
 ```
 
-In the forth column, next to your device name, you should see a string of letters and numbers that look like this: `6abd1aa5-8422-4b18-8058-11f821fd3967`. That is the UUID for the device.
+In the fourth column, next to your device name, you should see a string of letters and numbers that look like this: `6abd1aa5-8422-4b18-8058-11f821fd3967`. That is the UUID for the device.
 
 ### Mounting Your Drive: Ledger
 
@@ -226,21 +226,21 @@ In order for your validator to run properly, you will need to tune the system. (
 sudo $(command -v solana-sys-tuner) --user sol) > sys-tuner.log 2>&1
 ```
 
-## Switch to Sol User
-
-To run the validator, we want to use the sol user:
-
-```
-su - sol
-```
-
 ## Copy Key Pairs
 
-On your local computer (not on the validator).  Securely copy your validator-keypair.json file and your vote-account-keypair.json file.
+On your personal computer (not on the validator).  Securely copy your validator-keypair.json file and your vote-account-keypair.json file.
 
 ```
 scp validator-keypair.json sol@<server.hostname>:
 scp vote-account-keypair.json sol@<server.hostname>:
+```
+
+## Switch to Sol User
+
+On the validator server, switch to the sol user:
+
+```
+su - sol
 ```
 
 ## Create A Validator Startup Script
@@ -319,7 +319,7 @@ Gossip is a protocol used in the solana network to pass non critical messages be
 In a new terminal window, connect to your server via ssh. Identify your validator pupkey:
 
 ```
-solana keygen pubkey ~/validator-keypair.json
+solana-keygen pubkey ~/validator-keypair.json
 ```
 
 The command `solana gossip` lists all validators that have registered with the protocol. To check that the newly setup validator is in gossip, we will grep for our pubkey in the output:

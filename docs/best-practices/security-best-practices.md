@@ -17,9 +17,9 @@ sudo apt upgrade
 
 ## DO NOT Store Your Withdrawer Key On Your Validator
 
-Your withdrawer key gives you full access to the vote account of your validator.  It is highly sensitive information and it should not be stored on the validator itself.  Make sure you create this key on a secure computer (other than your validator computer) and that you store it somewhere safe. Ideally you should store this key in cold storage like a hardware wallet or at the very least in a password protector so that a hacker could not get access to it directly.  Again, this could should never be stored on your validator at any time.
+Your withdrawer key gives you full access to the vote account of your validator.  It is highly sensitive information and it should not be stored on the validator itself.  Make sure you create this key on a secure computer (other than your validator computer) and that you store it somewhere safe. Ideally you should store this key in cold storage like a hardware wallet or at the very least in a password protector so that a hacker could not get access to it directly.  Again, this should never be stored on your validator at any time.
 
-## Do Not Run The Solana Validator as a Root User
+## DO NOT Run The Solana Validator as a Root User
 
 It may be easier to get started by running your application as root, but it is a bad practice. If there is an exploit in your system, a hacker could have much more access if your solana application is running as the root user. Instead, see the setup instructions for creating a user called `sol` and running the application as the `sol` user.
 
