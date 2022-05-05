@@ -7,7 +7,7 @@ sidebar_position: 1
 A validator is a computer that helps to run the
 Solana network.  Each validator executes a program that keeps track of all accounts on the Solana cluster and validates transactions being added to the network.  Without validators, Solana would not be able to function.
 
-At [https://solanabeach.io/]](solanabeach.io), you can see the location of all validators in the mainnet beta cluster. You can also see statistics and information on the each validator at [https://solanabeach.io/validators](solanabeach.io/validators). The more independent entities that run validators, the less vulnerable the cluster is to an attack or catastrophe that affects the cluster.
+At [solanabeach.io](https://solanabeach.io/), you can see the location of all validators in the mainnet beta cluster. You can also see statistics and information on the each validator at [solanabeach.io/validators](https://solanabeach.io/validators). The more independent entities that run validators, the less vulnerable the cluster is to an attack or catastrophe that affects the cluster.
 
 By becoming a validator, you are helping to grow the network. You are also learning first hand how the Solana cluster functions at the lowest level.  You will become part of an active community of operators that are passionate about the Solana ecosystem.
 
