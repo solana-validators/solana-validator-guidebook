@@ -66,7 +66,7 @@ __IMPORTANT__ the authorized-withdrawer-keypair.json should be stored in a secur
 Before you can create your vote account, you need to configure the solana command line tool a bit more.
 
 
-The below command sets the default kepair that the solana cli uses to the `validator-keypair.json` file that you just created in the terminal:
+The below command sets the default keypair that the solana cli uses to the `validator-keypair.json` file that you just created in the terminal:
 
 ```
 solana config set --keypair ./validator-keypair.json
