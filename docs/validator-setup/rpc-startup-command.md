@@ -2,7 +2,11 @@
 sidebar_position: 2
 ---
 
-# RPC Startup Command
+# RPC Setup
+
+Since an RPC server runs the same process as a consensus validator, you can follow the instructions in the [previous section](/validator-setup/initial-validator-setup) to get started.  After you validator is running, you can refer to this section for RPC specific setup instructions.
+
+## Sample RPC validator.sh
 
 Here is an example `validator.sh` file for a testnet rpc server.  You will want to be aware of the following flags:
 
@@ -42,5 +46,5 @@ exec solana-validator \
 
 ### Solana Bigtable
 
-The Solana blockchain is able to create many transactions per second.  Because of the volume of transactions on the chain, it is not practical for an RPC node to store all of the blockchain on the machine.  Instead, RPC operators use the `--limit-ledger-size` flag to specify how many blocks to store on the RPC node.  If the user of the RPC node need historical blockchain data then you will have to access it through a Solana bigtable instance.  If you are interested in setting up your own bigtable instance, see [these docs](https://github.com/solana-labs/solana-bigtable) in the solana github repository.
+The Solana blockchain is able to create many transactions per second.  Because of the volume of transactions on the chain, it is not practical for an RPC node to store all of the blockchain on the machine.  Instead, RPC operators use the `--limit-ledger-size` flag to specify how many blocks to store on the RPC node.  If the user of the RPC node needs historical blockchain data then the RPC server will have to access older blocks through a Solana bigtable instance.  If you are interested in setting up your own bigtable instance, see [these docs](https://github.com/solana-labs/solana-bigtable) in the solana github repository.
 
