@@ -59,7 +59,7 @@ solana-keygen new -o vote-account-keypair.json
 solana-keygen new -o authorized-withdrawer-keypair.json
 ```
 
-__IMPORTANT__ the authorized-withdrawer-keypair.json should be stored in a secure place like a hardware wallet or a password protection app. It should not be stored on the validator. See the [FAQ](/FAQ/) for more details.
+__IMPORTANT__ the authorized-withdrawer-keypair.json should be stored in a secure place like a hardware wallet or a password protection app. It should not be stored on the validator. See the [FAQ](/FAQ/frequently-asked-questions) for more details.
 
 ## Create A Vote Account
 
