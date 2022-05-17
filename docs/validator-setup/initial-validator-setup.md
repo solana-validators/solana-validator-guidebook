@@ -17,7 +17,7 @@ To start this guide, you will be running commands on your trusted personal compu
 
 ## Install The Solana CLI Locally
 
-To create your validator vote account, you need to install the solana command line interface on your local computer.  Follow [Use Solana's Install Tool](https://docs.solana.com/cli/install-solana-cli-tools#use-solanas-install-tool) section from the solana docs to install the cli.  You can return to this document once you are able to run the following command and get an answer on your terminal:
+To create your validator vote account, you need to install the solana command line interface on your local computer.  Follow [Use Solana's Install Tool](https://docs.solana.com/cli/install-solana-cli-tools#use-solanas-install-tool) section from the solana docs to install the cli. Alternatively, you can also [build from source](https://docs.solana.com/cli/install-solana-cli-tools#build-from-source).  Building from source is a great option for those that want a more secure and potentially more performant executable.  You can return to this document once you are able to run the following command and get an answer on your terminal:
 
 ```
 solana --version
@@ -181,7 +181,7 @@ sudo chown -R sol:sol /mnt/ledger
 Now you can mount the drive:
 
 ```
-sudo mount /dev/nvme01 /mnt/ledger
+sudo mount /dev/nvme0n1 /mnt/ledger
 ```
 
 ### Formatting And Mounting Drive: AccountsDB
@@ -191,7 +191,7 @@ You will also want to mount the accounts db on a separate hard drive.  The proce
 Assuming you have device at `/dev/nvme1n1`, Format the device and verify it exists:
 
 ```
-sudo mkfs -t ext4 /dev/nvme0n1
+sudo mkfs -t ext4 /dev/nvme1n1
 ```
 
 Then verify the UUID for the device exists:
@@ -215,7 +215,7 @@ sudo chown -R sol:sol /mnt/accounts
 And lastly, mount the drive:
 
 ```
-sudo mount /dev/nvme01n1 /mnt/accounts
+sudo mount /dev/nvme1n1 /mnt/accounts
 ```
 
 ## System Tuning
@@ -223,7 +223,7 @@ sudo mount /dev/nvme01n1 /mnt/accounts
 In order for your validator to run properly, you will need to tune the system. (If you skip this step, you will likely get an out of memory error). The solana docs have an advanced discussion of manual tuning options [here](https://docs.solana.com/running-validator/validator-start#system-tuning).  To get started, the automated `solana-sys-tuner` will work well for us. Run the following:
 
 ```
-sudo $(command -v solana-sys-tuner) --user sol) > sys-tuner.log 2>&1
+sudo $(command -v solana-sys-tuner) --user sol > sys-tuner.log 2>&1
 ```
 
 ## Copy Key Pairs

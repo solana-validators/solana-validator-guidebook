@@ -1,6 +1,7 @@
 ---
 id: solana-validator-guidebook-introduction
 slug: /
+title: Introduction
 ---
 
 # Solana Validator Guidebook
