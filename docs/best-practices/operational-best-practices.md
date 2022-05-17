@@ -24,13 +24,22 @@ solana-validator --help
 
 ## Upgrading
 
-There are many ways to upgrade the solana software and as an operator, you will need to do this fairly often.  One option is to use `solana-install` to install a specific version.  Assuming you want to install solana version `1.10.11`, you would execute the following:
+There are many ways to upgrade the Solana software.  As an operator, you will need to upgrade often, so it is important to get comfortable with this process.
+
+### Building From Source
+
+It is a best practice to always build your Solana binaries from source.  If you build from source, you are certain that the code you are building has not been tampered with before the binary was created. You may also be able to optimize your `solana-validator` binary to your specific hardware.  If you build from source on the validator machine (or a machine with the same CPU), you can target your specific architecture using the `-march` flag.  Refer to the [solana docs](https://docs.solana.com/cli/install-solana-cli-tools#build-from-source) for instructions on building from source.
+
+
+### solana-install
+
+If you are not comfortable building from source or you need to quickly install a new version to test somethings out, you could instead try using the `solana-install` command. Assuming you want to install solana version `1.10.13`, you would execute the following:
 
 ```
-solana-install init 1.10.11
+solana-install init 1.10.13
 ```
 
-This command downloads the executable for `1.10.11` and installs it into a `.local` directory.  You can also look at `solana-install --help` for more options.
+This command downloads the executable for `1.10.13` and installs it into a `.local` directory.  You can also look at `solana-install --help` for more options.
 
 ## Using Local Snapshots
 
