@@ -12,7 +12,13 @@ As a validator your primary focus is maintaining the network and making sure tha
 
 Since all votes in Solana happen on the blockchain, a validator incurs a transaction cost for each vote that it makes.  These transaction fees amount to approximately 1.0 SOL per day.  It is important to make sure your validator always has enough SOL in its identity account to pay for the transactions.
 
-There are community provided resources that go into the economics of running a validator.  Congent Crypto has written a [blog post](https://medium.com/@Cogent_Crypto/how-to-become-a-validator-on-solana-9dc4288107b7) that discusses economics and getting started.  Also, Shinobi Systems created an [economic estimator spreadsheet](https://docs.google.com/spreadsheets/d/1HPU_uG3iJ_ns27CItdWGllW0c-Pn07J0_LEDZs1otQY/edit#gid=0).  For the most up to date resources, go to the [solana discord](https://discord.com/invite/solana) and look in the `#validator-resources` channel for a list of links.
+There are community provided resources that go into the economics of running a validator.  As an operator, it is important to understand how a validator spends and receives sol through the algorithm.  The following links are a great resource:
+
+*  Congent Crypto has written a [blog post](https://medium.com/@Cogent_Crypto/how-to-become-a-validator-on-solana-9dc4288107b7) that discusses economics and getting started.
+* Michael Hubbard wrote an [article](https://laine-sa.medium.com/solana-staking-rewards-validator-economics-how-does-it-work-6718e4cccc4e) that explains the economics of Solana in more depth for stakers and for validators.
+* Shinobi Systems created an [economic estimator spreadsheet](https://docs.google.com/spreadsheets/d/1HPU_uG3iJ_ns27CItdWGllW0c-Pn07J0_LEDZs1otQY/edit#gid=0).
+
+For the most up to date resources, go to the [solana discord](https://discord.com/invite/solana) and look in the `#validator-resources` channel for a list of links.
 
 ## RPC Nodes
 

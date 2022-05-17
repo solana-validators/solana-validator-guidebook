@@ -40,3 +40,7 @@ exec solana-validator \
     --limit-ledger-size
 ```
 
+### Solana Bigtable
+
+The Solana blockchain is able to create many transactions per second.  Because of the volume of transactions on the chain, it is not practical for an RPC node to store all of the blockchain on the machine.  Instead, RPC operators use the `--limit-ledger-size` flag to specify how many blocks to store on the RPC node.  If the user of the RPC node need historical blockchain data then you will have to access it through a Solana bigtable instance.  If you are interested in setting up your own bigtable instance, see [these docs](https://github.com/solana-labs/solana-bigtable) in the solana github repository.
+
