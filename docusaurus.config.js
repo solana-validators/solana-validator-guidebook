@@ -31,10 +31,6 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        // gtag: {
-        //   trackingID: "G-03S61JX24N",
-        //   anonymizeIP: true,
-        // },
       }),
     ],
   ],
@@ -42,7 +38,7 @@ const config = {
     [
       "@docusaurus/plugin-google-gtag",
       {
-        trackingID: "G-03S61JX24N",
+        trackingID: "G-YLB87LRB58",
         anonymizeIP: true,
       },
     ],
