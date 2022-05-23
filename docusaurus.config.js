@@ -31,14 +31,22 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        gtag: {
-          trackingID: "G-03S61JX24N",
-          anonymizeIP: true,
-        },
+        // gtag: {
+        //   trackingID: "G-03S61JX24N",
+        //   anonymizeIP: true,
+        // },
       }),
     ],
   ],
-
+  plugins: [
+    [
+      "@docusaurus/plugin-google-gtag",
+      {
+        trackingID: "G-03S61JX24N",
+        anonymizeIP: true,
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
