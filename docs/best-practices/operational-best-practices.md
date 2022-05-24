@@ -43,7 +43,7 @@ This command downloads the executable for `1.10.13` and installs it into a `.loc
 
 ## Using Local Snapshots
 
-Startup time for your validator is important, because you want to minimize downtime as much as possible.  If your downtime was short lived and you have a recent snapshot of the ledger on your local hard drive, you can avoid some startup time by skipping the snapshot fetching that that the validator will do by default.  In your startup script, add the following flag to the `solana-validator` command:
+Startup time for your validator is important because you want to minimize downtime as much as possible.  If your validator is offline for a short period of time and you have a recent snapshot of the ledger on your local hard drive, you can avoid some startup time by skipping the snapshot fetching that that the validator will do by default.  In your startup script, add the following flag to the `solana-validator` command:
 
 ```
 --no-snapshot-fetch
