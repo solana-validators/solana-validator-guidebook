@@ -8,12 +8,12 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Solana Validator Guidebook",
   tagline: "Run a Solana validator today",
-  url: "https://solana-validator-guidbook.vercel.app/",
+  url: "https://www.solana-validator-guidebook.com/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "tigarcia", // Usually your GitHub org/user name.
+  organizationName: "solana-validators", // Usually your GitHub org/user name.
   projectName: "solana-validator-guidebook", // Usually your repo name.
 
   presets: [
@@ -56,7 +56,7 @@ const config = {
             label: "Get Started",
           },
           {
-            href: "https://github.com/tigarcia/solana-validator-guidbook",
+            href: "https://github.com/solana-validators/solana-validator-guidebook",
             label: "GitHub",
             position: "right",
           },
@@ -92,7 +92,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/tigarcia/solana-validator-guidbook",
+                href: "https://github.com/solana-validators/solana-validator-guidebook",
               },
               {
                 label: "Solana Docs",
@@ -101,7 +101,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()}. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Solana Foundation.`,
       },
       prism: {
         theme: lightCodeTheme,
