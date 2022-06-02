@@ -32,17 +32,17 @@ Anyone can join the solana cluster (devnet, testnet or mainnet) at any time! The
 
 ## Solana Foundation Delegation Program
 
-The Solana Foundation helps facilitate the growth of the consensus validator network by running a SOL delegation program.  The program is open to anyone to join, but it currently is not offered to US residents. You can find out more information [here](https://solana.foundation/delegation-program)
+The Solana Foundation helps facilitate the growth of the consensus validator network by running a SOL delegation program.  The program is open to new applicants, but it currently is not offered to US residents. You can find out more information [here](https://solana.foundation/delegation-program)
 
 ## Solana Foundation Server Program
 
-Separately from the delegation program, The Solana Foundation offers a server program that secures servers in various data-centers all over the world.  The servers meet or exceed the the Solana validator hardware specs.  No long-term lease commitments are required and the program is open to US residents. To find out more, visit the [solana server program page](https://solana.foundation/server-program).
+Separately from the delegation program, The Solana Foundation offers a server program that secures servers in various data-centers all over the world.  If you would like to run a consensus validator or RPC server, you may use this program rent bare metal servers in these data-centers. The servers meet or exceed the the Solana validator hardware specs.  No long-term lease commitments are required and the program is open to US residents. To find out more, visit the [solana server program page](https://solana.foundation/server-program).
 
 ## Can I use my computer at home?
 
-While anyone can join the network, you should make sure that your home computer and network meets the specifications in the [hardware requirements](https://docs.solana.com/running-validator/validator-reqs) doc.  Most home internet service providers do not provide consistent service that would allow your validator to perform well.
+While anyone can join the network, you should make sure that your home computer and network meets the specifications in the [hardware requirements](https://docs.solana.com/running-validator/validator-reqs) doc.  Most home internet service providers do not provide consistent service that would allow your validator to perform well.  If your home network or personal hardware is not performant enough to keep up with the solana cluster, your validator will not be able to participate in consensus.
 
-In addition, you will want to make sure that your home computer is resistant to outages caused by loss of power, flooding, fire, theft, etc.  To get started and learn about being an operator, a home setup may be sufficient, but you will want to consider all of these factors when you start operating your validator on mainnet.
+In addition to performance considerations, you will want to make sure that your home computer is resistant to outages caused by loss of power, flooding, fire, theft, etc.  If you are just getting started and learning about being an operator, a home setup may be sufficient, but you will want to consider all of these factors when you start operating your validator on the mainnet-beta cluster.
 
 ## Do I Have To Use the Solana Server Program?
 
