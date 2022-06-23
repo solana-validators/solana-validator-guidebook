@@ -41,7 +41,7 @@ solana-install init 1.10.13
 
 This command downloads the executable for `1.10.13` and installs it into a `.local` directory.  You can also look at `solana-install --help` for more options.
 
-## Using Local Snapshots
+## Snapshots
 
 Startup time for your validator is important because you want to minimize downtime as much as possible.  If your validator is offline for a short period of time and you have a recent snapshot of the ledger on your local hard drive, you can avoid some startup time by skipping the snapshot fetching that that the validator will do by default.  In your startup script, add the following flag to the `solana-validator` command:
 
@@ -50,6 +50,35 @@ Startup time for your validator is important because you want to minimize downti
 ```
 
 If you use this flag with the `solana-validator` command, make sure that you run `solana catchup <pubkey>` after your validator starts to make sure that the validator is catching up in a reasonable time.  If the snapshot that you are using locally is too old, it may be faster to use a snapshot from another validator.  Be aware that using a snapshot instead of catching up will likely result in missing blocks in your local copy of the ledger.  Because of these trade offs, you will have to experiment with this flag to figure out what works best for you.
+
+### Downloading Snapshots
+
+If you are starting a validator for the first time or your validator has fallen too far behind after a restart, then you may have to download a snapshot. To download a snapshot, you must _not_ use the `--no-snapshot-fetch` flag.  Without the flag, your validator will automatically download a snapshot from your known validators that you specified with the `--known-validator` flag.
+
+### Manually Downloading Snapshots
+
+In the case that there are network troubles with one or more of your known validators, then you may have to manually download the snapshot.  To manually download a snapshot from one of your known validators, first, find the IP address of the validator in using the `solana gossip` command.  In the example below, `5D1fNXzvv5NjV1ysLjirC4WY92RNsVH18vjmcszZd8on` is the pubkey of one of my known validators:
+
+```
+solana gossip | grep 5D1fNXzvv5NjV1ysLjirC4WY92RNsVH18vjmcszZd8on
+```
+
+The IP address of the validators is `139.178.68.207` and the open port on this validator is `80`.  You can see the IP address and port in the fifth column in the gossip output:
+
+```
+139.178.68.207  | 5D1fNXzvv5NjV1ysLjirC4WY92RNsVH18vjmcszZd8on | 8001   | 8004  | 139.178.68.207:80     | 1.10.27 | 1425680972
+```
+
+Now that the IP and port are known, you can download a full snapshot or an incremental snapshot:
+
+```
+wget --trust-server-names http://139.178.68.207:80/snapshot.tar.bz2
+wget --trust-server-names http://139.178.68.207:80/incremental-snapshot.tar.bz2
+```
+
+Now move those files into your snapshot directory. If you have not specified a snapshot directory, then you should put the files in your ledger directory.
+
+Now that you have a local snapshot, you can restart your validator with the `--no-snapshot-fetch` flag.
 
 ## Regularly Check Account Balances
 
