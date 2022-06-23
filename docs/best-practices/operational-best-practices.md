@@ -55,6 +55,8 @@ If you use this flag with the `solana-validator` command, make sure that you run
 
 If you are starting a validator for the first time or your validator has fallen too far behind after a restart, then you may have to download a snapshot. To download a snapshot, you must _not_ use the `--no-snapshot-fetch` flag.  Without the flag, your validator will automatically download a snapshot from your known validators that you specified with the `--known-validator` flag.
 
+If one of the known validators is downloading slowly, you can try adding the `--minimal-snapshot-download-speed` flag to your validator. This flag will switch to another known validator if the initial download speed is below the threshold that you set.
+
 ### Manually Downloading Snapshots
 
 In the case that there are network troubles with one or more of your known validators, then you may have to manually download the snapshot.  To manually download a snapshot from one of your known validators, first, find the IP address of the validator in using the `solana gossip` command.  In the example below, `5D1fNXzvv5NjV1ysLjirC4WY92RNsVH18vjmcszZd8on` is the pubkey of one of my known validators:
