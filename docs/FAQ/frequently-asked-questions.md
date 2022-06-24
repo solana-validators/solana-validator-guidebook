@@ -34,7 +34,9 @@ When a validator node starts up, it must either download a snapshot or use a loc
 
 ### How can you check if your node has caught up to the cluster?
 
-`solana catchup <pubkey>`
+If you have RPC opened up, you can check this using `solana catchup <pubkey>`
+
+If you are running with `--private-rpc` however, you will need to use `solana catchup --our-localhost 8899`
 
 ### How do you find your pubkey?
 
