@@ -261,6 +261,7 @@ nano /home/sol/bin/validator.sh
 Copy and paste the following into `validator.sh`:
 
 ```
+#!/bin/bash
 solana-validator \
     --identity validator-keypair.json \
     --vote-account vote-account-keypair.json \
@@ -269,7 +270,7 @@ solana-validator \
     --known-validator Ft5fbkqNa76vnsjYNwjDZUXoTWpP7VYm3mtsaQckQADN \
     --known-validator 9QxCLckBiJc783jnMvXZubK4wH86Eqqvashtrwvcsgkv \
     --only-known-rpc \
-    --log /home/sol/solana-validator.log
+    --log /home/sol/solana-validator.log \
     --ledger /mnt/ledger \
     --rpc-port 8899 \
     --dynamic-port-range 8000-8020 \
