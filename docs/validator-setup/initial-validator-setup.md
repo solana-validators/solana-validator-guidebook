@@ -261,6 +261,7 @@ nano /home/sol/bin/validator.sh
 Copy and paste the following into `validator.sh`:
 
 ```
+#!/bin/bash
 solana-validator \
     --identity validator-keypair.json \
     --vote-account vote-account-keypair.json \
